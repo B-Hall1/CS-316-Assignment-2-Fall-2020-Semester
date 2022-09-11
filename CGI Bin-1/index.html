@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div id="status_line" class="green">Ready for command</div>
+        <form method="POST" action="asg.CGI.cgi" enctype="multipart/form-data">
+        <div class="assignment">
+            <div class="top-text">pick an option</div>
+            <div class="command-input" onmouseover="insertBg()">
+                <input type="radio" id="insert" name="command" value="insert">
+                <label for="insert">Insert</label>
+                <div class="insert-div input-text" id = "insert-div">
+                    <label for="insert-text">name:</label>
+                    <input type="text" id="insert-text" name="name" onkeypress="onInsert()">
+                    <label for="insert-text">value:</label>
+                    <input type="text" id="value-text" name="value" onkeypress="onInsert()">
+                </div>
+            </div>
+
+            <div class="command-input"  onmouseover="retrieveBg()">
+                <input type="radio" id="retrieve" name="command" value="retrieve">
+                <label for="retrieve">retrieve</label>
+                <div class="retrieve-div input-text" id = "retrieve-div">
+                    <label for="retrieve-text">name:</label>
+                    <input type="text" id="retrieve-text" name="retrieve-name" onkeypress="onRetrieve()">
+
+                </div>
+            </div>
+            <div class="command-input"  onmouseover="clearBg()">
+                <input type="radio" id="clear" name="command" value="clear">
+                <label for="clear">clear</label>
+                <div class="clear-div input-text" id = "clear-div">
+                    <label for="clear-text">password:</label>
+                    <input type="password" id="password-text" name="password" onkeypress="onBlear()">
+                </div>
+            </div>
+            <div class="command-input"  onmouseover="digestBg()">
+                <input type="radio" id="digest" name="command" value="digest">
+                <label for="digest">digest</label>
+                <div class="digest-div input-text" id="digest-div">
+                    <label for="digest-text">file name:</label>
+                    <input type="text" id="digest-text" name="filename" onkeypress="onDigest()">
+                </div>
+            </div>
+            <div class="command-input" onmouseover="inspectBg()">
+                <input type="radio" id="inspect" name="command" value="inspect">
+                <label for="inspect">inspect</label>
+                <div class="inspect-div input-text" id = "inspect-div">
+                    <label for="inspect-text">file:</label>
+                    <input type="file" id="inspect-text" name="file" onkeypress="onInspect()">
+                </div>
+            </div>
+            <input type="submit" class="submit-button" value="Submit">
+        </div>
+    </form>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
